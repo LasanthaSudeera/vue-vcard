@@ -6,7 +6,7 @@ export default Vue.extend({
   name: 'ServeDev',
   components: {
     VueVcard
-  }
+  },
 });
 </script>
 
