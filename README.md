@@ -38,6 +38,7 @@ Vue.component('vue-vcard', Vue-vcard);
 | showQR | Boolean | Enable/Disable the QR Code display|
 | size | Integer | Size of the Generate QR Code |
 | birthday | String | Date of birth |
+| gender | String | Gender |
 | workPhone | String | Work Phone number |
 | homePhone | String | Home phone number |
 | workEmail | String | Work email |
