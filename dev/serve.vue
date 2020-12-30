@@ -12,6 +12,6 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <vue-vcard />
+    <vue-vcard firstName="Lasantha" lastName="Sanjeewa" />
   </div>
 </template>
