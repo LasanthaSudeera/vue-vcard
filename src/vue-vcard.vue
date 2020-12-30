@@ -41,21 +41,52 @@ export default {
     homeEmail: String,
     orgName: String,
     orgTitle: String,
-    homeStreet: String,
-    homeCity: String,
-    homeRegion: String,
-    homePost: String,
-    homeCountry: String,
-    orgStreet: String,
-    orgCity: String,
-    orgRegion: String,
-    orgPost: String,
-    orgCountry: String,
+    homeStreet: {
+      default: '',
+      type: String,
+    },
+    homeCity: {
+      default: '',
+      type: String,
+    },
+    homeRegion: {
+      default: '',
+      type: String,
+    },
+    homePost: {
+      default: '',
+      type: String,
+    },
+    homeCountry: {
+      default: '',
+      type: String,
+    },
+    orgStreet: {
+      default: '',
+      type: String,
+    },
+    orgCity: {
+      default: '',
+      type: String,
+    },
+    orgRegion: {
+      default: '',
+      type: String,
+    },
+    orgPost: {
+      default: '',
+      type: String,
+    },
+    orgCountry: {
+      default: '',
+      type: String,
+    },
   },
   created() {
     this.addPersonalInfo();
     this.addContactInformation();
     this.addWorkDetails();
+    this.addAddressDetails();
   },
   data() {
     return {
@@ -120,7 +151,7 @@ export default {
           this.homeRegion +
           this.homePost +
           this.homeCountry !==
-        undefined
+        ''
       ) {
         this.vCard +=
           "\nADR;TYPE=home:;;" +
@@ -140,7 +171,7 @@ export default {
           this.orgRegion +
           this.orgPost +
           this.orgCountry !==
-        undefined
+        ''
       ) {
         this.vCard +=
           "\nADR;TYPE=work:;;" +

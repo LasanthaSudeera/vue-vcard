@@ -48,9 +48,9 @@
     "url": "https://github.com/LasanthaSudeera/vue-vcard.git"
   },
   "keywords": [
-    "vuejs base64",
-    "input",
-    "vuejs base64",
-    "Upload base 64"
+    "vuejs vcard",
+    "vscard string",
+    "vcard generator",
+    "qr code"
   ]
 }
