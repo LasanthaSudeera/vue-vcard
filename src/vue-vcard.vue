@@ -35,9 +35,27 @@ export default {
     },
     birthday: String,
     gender: String,
+    workPhone: String,
+    homePhone: String,
+    workEmail: String,
+    homeEmail: String,
+    orgName: String,
+    orgTitle: String,
+    homeStreet: String,
+    homeCity: String,
+    homeRegion: String,
+    homePost: String,
+    homeCountry: String,
+    orgStreet: String,
+    orgCity: String,
+    orgRegion: String,
+    orgPost: String,
+    orgCountry: String,
   },
   created() {
     this.addPersonalInfo();
+    this.addContactInformation();
+    this.addWorkDetails();
   },
   data() {
     return {
@@ -59,12 +77,82 @@ export default {
         " " +
         this.lastName;
 
-      if (this.birthday !== "") {
+      if (this.birthday !== undefined) {
         this.vCard += "\nBDAY:" + this.birthday;
       }
 
-      if (this.gender !== "") {
+      if (this.gender !== undefined) {
         this.vCard += "\nX-GENDER:" + this.gender;
+      }
+    },
+    addContactInformation: function() {
+      // Add if phone number is provided
+      if (this.homePhone !== undefined) {
+        this.vCard += "\nTEL;TYPE=home:" + this.homePhone;
+      }
+
+      if (this.workPhone !== undefined) {
+        this.vCard += "\nTEL;TYPE=work:" + this.workPhone;
+      }
+
+      // Add if email is provided
+      if (this.workEmail !== undefined) {
+        this.vCard += "\nEMAIL;TYPE=internet,home:" + this.workEmail;
+      }
+
+      if (this.homeEmail !== undefined) {
+        this.vCard += "\nEMAIL;TYPE=internet,work:" + this.homeEmail;
+      }
+    },
+    addWorkDetails: function() {
+      if (this.orgTitle !== undefined) {
+        this.vCard += "\nORG:" + this.orgTitle;
+      }
+
+      if (this.orgName !== undefined) {
+        this.vCard += "\nTITLE:" + this.orgName;
+      }
+    },
+    addAddressDetails: function() {
+      if (
+        this.homeStreet +
+          this.homeCity +
+          this.homeRegion +
+          this.homePost +
+          this.homeCountry !==
+        undefined
+      ) {
+        this.vCard +=
+          "\nADR;TYPE=home:;;" +
+          this.homeStreet +
+          ";" +
+          this.homeCity +
+          ";" +
+          this.homeRegion +
+          ";" +
+          this.homePost +
+          ";" +
+          this.homeCountry;
+      }
+      if (
+        this.orgStreet +
+          this.orgCity +
+          this.orgRegion +
+          this.orgPost +
+          this.orgCountry !==
+        undefined
+      ) {
+        this.vCard +=
+          "\nADR;TYPE=work:;;" +
+          this.orgStreet +
+          ";" +
+          this.orgCity +
+          ";" +
+          this.orgRegion +
+          ";" +
+          this.orgPost +
+          ";" +
+          this.orgCountry;
       }
     },
   },
