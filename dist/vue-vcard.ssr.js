@@ -118,20 +118,20 @@ var script = {
 
 
       if (this.workEmail !== undefined) {
-        this.vCard += "\nEMAIL;TYPE=internet,home:" + this.workEmail;
+        this.vCard += "\nEMAIL;TYPE=internet,work:" + this.workEmail;
       }
 
       if (this.homeEmail !== undefined) {
-        this.vCard += "\nEMAIL;TYPE=internet,work:" + this.homeEmail;
+        this.vCard += "\nEMAIL;TYPE=internet,home:" + this.homeEmail;
       }
     },
     addWorkDetails: function addWorkDetails() {
       if (this.orgTitle !== undefined) {
-        this.vCard += "\nORG:" + this.orgTitle;
+        this.vCard += "\nTITLE:" + this.orgTitle;
       }
 
       if (this.orgName !== undefined) {
-        this.vCard += "\nTITLE:" + this.orgName;
+        this.vCard += "\nORG:" + this.orgName;
       }
     },
     addAddressDetails: function addAddressDetails() {
@@ -249,7 +249,7 @@ var __vue_inject_styles__ = undefined;
 var __vue_scope_id__ = undefined;
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-3f897c5e";
+var __vue_module_identifier__ = "data-v-1f590a95";
 /* functional template */
 
 var __vue_is_functional_template__ = false;

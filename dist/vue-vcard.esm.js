@@ -121,20 +121,20 @@ var script = {
 
 
       if (this.workEmail !== undefined) {
-        this.vCard += "\nEMAIL;TYPE=internet,home:" + this.workEmail;
+        this.vCard += "\nEMAIL;TYPE=internet,work:" + this.workEmail;
       }
 
       if (this.homeEmail !== undefined) {
-        this.vCard += "\nEMAIL;TYPE=internet,work:" + this.homeEmail;
+        this.vCard += "\nEMAIL;TYPE=internet,home:" + this.homeEmail;
       }
     },
     addWorkDetails: function () {
       if (this.orgTitle !== undefined) {
-        this.vCard += "\nORG:" + this.orgTitle;
+        this.vCard += "\nTITLE:" + this.orgTitle;
       }
 
       if (this.orgName !== undefined) {
-        this.vCard += "\nTITLE:" + this.orgName;
+        this.vCard += "\nORG:" + this.orgName;
       }
     },
     addAddressDetails: function () {
